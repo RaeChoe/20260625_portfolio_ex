@@ -1,19 +1,20 @@
 import { NavLink } from "react-router";
-import Figure from "./Figure";
 
-function Nav({ data, onChangeMode }) {
+function Nav({ id, data, onChangeMode }) {
   return (
     <nav>
-      <ul>
+      <ul className="nav flex-column nav-pills gap-2 p-2">
         {data.map(d => (
-          <li
-            key={d.id}
-            onClick={e => {
-              e.preventDefault();
-              onChangeMode(d.id);
-            }}
-          >
-            <NavLink to={d.id}>{d.title}</NavLink>
+          <li key={d.id} className="nav-item">
+            <NavLink
+              to={`/${d.id}`}
+              onClick={e => {
+                onChangeMode(d.id);
+              }}
+              className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+            >
+              {d.title}
+            </NavLink>
           </li>
         ))}
       </ul>
