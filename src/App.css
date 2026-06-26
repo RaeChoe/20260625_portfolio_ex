@@ -5,10 +5,13 @@ img {
   width: 70%;
 }
 .nav {
-  width: 100px;
+  width: 100%;
 }
 .nav-item {
   border: 1px solid #555;
   border-radius: 0.375rem;
   box-sizing: border-box;
+}
+.nav-link {
+  width: 100%;
 }
